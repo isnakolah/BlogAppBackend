@@ -14,21 +14,21 @@ namespace Blog.Services
 {
     public class SexService : ISexService
     {
-        private readonly IMemoryCache _memoryCache;
         private readonly IMapper _mapper;
+        private readonly IMemoryCache _memoryCache;
         private readonly IApplicationDbContext _context;
         private readonly IConfigurationProvider _configuration;
 
         public SexService(
-            IApplicationDbContext context, 
-            IConfigurationProvider configuration, 
-            IMemoryCache memoryCache, 
-            IMapper mapper)
+            IMapper mapper,
+            IMemoryCache memoryCache,
+            IApplicationDbContext context,
+            IConfigurationProvider configuration)
         {
-            _context = context;
-            _configuration = configuration;
-            _memoryCache = memoryCache;
             _mapper = mapper;
+            _context = context;
+            _memoryCache = memoryCache;
+            _configuration = configuration;
         }
 
         public async Task<ServiceResult<GetSexDTO[]>> GetAllSexes()

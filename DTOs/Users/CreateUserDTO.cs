@@ -13,7 +13,9 @@ namespace Blog.DTOs.Users
 
         public string LastName { get; set; }
 
-        public string Email { get; set; }
+        public string Email { get; set; } 
+
+        public string UserName { get; set; }
 
         public Guid SexID { get; set; }
 
@@ -21,7 +23,6 @@ namespace Blog.DTOs.Users
 
         public DateTime DateOfBirth { get; set; }
 
-        public string UserName { get; set; }
 
         public void Mapping(Profile profile)
         {

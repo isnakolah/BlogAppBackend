@@ -13,17 +13,17 @@ namespace Blog.Services
 {
     public class UserService : IUserService
     {
-        private readonly IPaginationService _paginationService;
-        private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IApplicationDbContext _context;
+        private readonly IPaginationService _paginationService;
 
         public UserService(
-            IApplicationDbContext context,
             IMapper mapper,
+            IApplicationDbContext context,
             IPaginationService paginationService)
         {
-            _context = context;
             _mapper = mapper;
+            _context = context;
             _paginationService = paginationService;
         }
 

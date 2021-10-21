@@ -31,7 +31,12 @@ namespace Blog.Services
                 .ProjectTo<TOut>(_configuration)
                 .ToArrayAsync();
 
-            var response = new PaginatedServiceResult<TOut> { PageNumber = pageNumber, PageSize = pageSize, Data = data };
+            var response = new PaginatedServiceResult<TOut> 
+            { 
+                PageNumber = pageNumber, 
+                PageSize = pageSize, 
+                Data = data 
+            };
 
             return response;
         }

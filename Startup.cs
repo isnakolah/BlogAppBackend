@@ -36,6 +36,8 @@ namespace Blog
 
             services.AddScoped<IPaginationService, PaginationService>();
 
+            services.AddScoped<IAuthorService, AuthorService>();
+
             services.AddControllers();
 
             services.AddMemoryCache();
