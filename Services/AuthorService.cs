@@ -25,7 +25,7 @@ namespace Blog.Services
             _context = context;
         }
 
-        public async Task<ServiceResult> CreateAuthor(CreateAuthorDTO author)
+        public async Task<ServiceResult> CreateAuthorAsync(CreateAuthorDTO author)
         {
             _context.Authors.Add(author.MapToEntity(_mapper));
 
@@ -34,10 +34,10 @@ namespace Blog.Services
             return ServiceResult.Success();
         }
 
-        public async Task<PaginatedServiceResult<GetAuthorDTO>> GetPaginatedAuthors()
+        public async Task<PaginatedServiceResult<GetAuthorDTO>> GetPaginatedAuthorsAsync()
         {
             var authors = await _paginationService
-                .CreateAsync<Author, GetAuthorDTO>(_context.Authors);
+                .GetPaginatedDataAsync<Author, GetAuthorDTO>(_context.Authors);
 
             return authors;
         }

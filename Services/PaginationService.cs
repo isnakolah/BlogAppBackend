@@ -18,7 +18,7 @@ namespace Blog.Services
             _configuration = configuration;
         }
 
-        public async Task<PaginatedServiceResult<TOut>> CreateAsync<TIn, TOut>(
+        public async Task<PaginatedServiceResult<TOut>> GetPaginatedDataAsync<TIn, TOut>(
             IQueryable<TIn> source) 
             where TIn: AuditableEntity where TOut : class
         {

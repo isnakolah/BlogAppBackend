@@ -31,7 +31,7 @@ namespace Blog.Services
             _configuration = configuration;
         }
 
-        public async Task<ServiceResult<GetSexDTO[]>> GetAllSexes()
+        public async Task<ServiceResult<GetSexDTO[]>> GetAllSexesAsync()
         {
             if (_memoryCache.TryGetValue(CacheKeys.SEXES, out GetSexDTO[] sexes))
                 return ServiceResult.Success(sexes);

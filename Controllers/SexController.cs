@@ -18,7 +18,7 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<ActionResult<ServiceResult<GetSexDTO[]>>> GetAllSexes()
         {
-            return Ok(await _sexService.GetAllSexes());
+            return Ok(await _sexService.GetAllSexesAsync());
         }
     }
 }

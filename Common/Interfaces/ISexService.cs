@@ -6,6 +6,6 @@ namespace Blog.Common.Interfaces
 {
     public interface ISexService
     {
-        Task<ServiceResult<GetSexDTO[]>> GetAllSexes();
+        Task<ServiceResult<GetSexDTO[]>> GetAllSexesAsync();
     }
 }

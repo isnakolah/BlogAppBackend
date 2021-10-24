@@ -8,10 +8,10 @@ namespace Blog.Common.Interfaces
 {
     public interface IUserService
     {
-        Task<ServiceResult> CreateUser(CreateUserDTO userDTO);
+        Task<ServiceResult> CreateUserAsync(CreateUserDTO userDTO);
 
-        Task<ServiceResult<GetUserDTO>> GetUserByID(Guid id);
+        Task<ServiceResult<GetUserDTO>> GetUserByIDAsync(Guid id);
 
-        Task<PaginatedServiceResult<GetUserDTO>> GetPaginatedUsers();
+        Task<PaginatedServiceResult<GetUserDTO>> GetPaginatedUsersAsync();
     }
 }

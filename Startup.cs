@@ -38,6 +38,8 @@ namespace Blog
 
             services.AddScoped<IAuthorService, AuthorService>();
 
+            services.AddScoped<IBlogPostService, BlogPostService>();
+
             services.AddControllers();
 
             services.AddMemoryCache();

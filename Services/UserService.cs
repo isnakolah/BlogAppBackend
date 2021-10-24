@@ -27,7 +27,7 @@ namespace Blog.Services
             _paginationService = paginationService;
         }
 
-        public async Task<ServiceResult> CreateUser(CreateUserDTO user)
+        public async Task<ServiceResult> CreateUserAsync(CreateUserDTO user)
         {
             await _context.Users.AddAsync(user.MapToEntity(_mapper));
 
@@ -36,14 +36,14 @@ namespace Blog.Services
             return ServiceResult.Success();
         }
 
-        public async Task<PaginatedServiceResult<GetUserDTO>> GetPaginatedUsers()
+        public async Task<PaginatedServiceResult<GetUserDTO>> GetPaginatedUsersAsync()
         {
-            var users = await _paginationService.CreateAsync<User, GetUserDTO>(_context.Users);
+            var users = await _paginationService.GetPaginatedDataAsync<User, GetUserDTO>(_context.Users);
 
             return users;
         }
 
-        public Task<ServiceResult<GetUserDTO>> GetUserByID(Guid id)
+        public Task<ServiceResult<GetUserDTO>> GetUserByIDAsync(Guid id)
         {
             throw new NotImplementedException();
         }

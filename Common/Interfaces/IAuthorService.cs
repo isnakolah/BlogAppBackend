@@ -6,8 +6,8 @@ namespace Blog.Common.Interfaces
 {
     public interface IAuthorService
     {
-        Task<ServiceResult> CreateAuthor(CreateAuthorDTO author);
+        Task<ServiceResult> CreateAuthorAsync(CreateAuthorDTO author);
 
-        Task<PaginatedServiceResult<GetAuthorDTO>> GetPaginatedAuthors();
+        Task<PaginatedServiceResult<GetAuthorDTO>> GetPaginatedAuthorsAsync();
     }
 }

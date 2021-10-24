@@ -18,13 +18,13 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<ActionResult<ServiceResult>> CreateAuthor([FromBody] CreateAuthorDTO user)
         {
-            return Created("", await _authorService.CreateAuthor(user));
+            return Created("", await _authorService.CreateAuthorAsync(user));
         }
 
         [HttpGet]
         public async Task<ActionResult<PaginatedServiceResult<GetAuthorDTO>>> GetPaginatedAuthors()
         {
-            return Ok(await _authorService.GetPaginatedAuthors());
+            return Ok(await _authorService.GetPaginatedAuthorsAsync());
         }
     }
 }

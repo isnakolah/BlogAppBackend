@@ -20,20 +20,20 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<ActionResult<PaginatedServiceResult<GetUserDTO>>> GetAllUsers()
         {
-            return Ok(await _userService.GetPaginatedUsers());
+            return Ok(await _userService.GetPaginatedUsersAsync());
         }
 
         [HttpPost]
         public async Task<ActionResult<ServiceResult>> CreateUser([FromBody] CreateUserDTO newUser)
         {
-            return Created("", await _userService.CreateUser(newUser));
+            return Created("", await _userService.CreateUserAsync(newUser));
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<ActionResult<ServiceResult<GetUserDTO>>> GetUser(Guid id)
         {
-            return Ok(await _userService.GetUserByID(id));
+            return Ok(await _userService.GetUserByIDAsync(id));
         }
     }
 }
