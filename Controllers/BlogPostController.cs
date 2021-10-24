@@ -23,8 +23,8 @@ namespace Blog.Controllers
         }
 
         [HttpGet]
-        [Route("{authorID:guid}")]
-        public async Task<ActionResult<PaginatedServiceResult<GetBlogPostDTO>>> GetPaginatedAuthorBlogs([FromQuery] Guid authorID)
+        [Route("author/{authorID:guid}")]
+        public async Task<ActionResult<PaginatedServiceResult<GetBlogPostDTO>>> GetPaginatedAuthorBlogs([FromRoute] Guid authorID)
         {
             return Ok(await _blogPostService.GetPaginatedAuthorsBlogAsync(authorID));
         }
