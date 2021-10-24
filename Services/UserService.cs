@@ -29,7 +29,7 @@ namespace Blog.Services
 
         public async Task<ServiceResult> CreateUser(CreateUserDTO user)
         {
-            await _context.Users.AddAsync(user.MapToUser(_mapper));
+            await _context.Users.AddAsync(user.MapToEntity(_mapper));
 
             await _context.SaveChangesAsync();
 

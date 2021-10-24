@@ -24,7 +24,7 @@ namespace Blog.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ServiceResult>> CreateUser(CreateUserDTO newUser)
+        public async Task<ActionResult<ServiceResult>> CreateUser([FromBody] CreateUserDTO newUser)
         {
             return Created("", await _userService.CreateUser(newUser));
         }

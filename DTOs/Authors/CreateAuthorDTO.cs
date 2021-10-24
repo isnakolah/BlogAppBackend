@@ -6,7 +6,7 @@ using System;
 
 namespace Blog.DTOs.Authors
 {
-    public class CreateAuthorDTO : IMapTo<Author>, IMapping<Author>
+    public class CreateAuthorDTO : IMapTo<Author>, IMapToEntity<Author>
     {
         public string Alias { get; set; }
 

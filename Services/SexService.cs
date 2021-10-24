@@ -48,7 +48,7 @@ namespace Blog.Services
             if (await SexNameExists(sex))
                 throw new Exception($"Sex with name {sex.Name} already exists");
 
-            _context.Sexes.Add(sex.MapToSex(_mapper));
+            _context.Sexes.Add(sex.MapToEntity(_mapper));
 
             _memoryCache.Remove(CacheKeys.SEXES);
 

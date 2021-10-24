@@ -4,17 +4,16 @@ using Blog.Models.Entities;
 
 namespace Blog.DTOs.Sexes
 {
-    public class CreateSexDTO : IMapTo<Sex>
+    public class CreateSexDTO : IMapTo<Sex>, IMapToEntity<Sex>
     {
         public string Name { get; set; }
-
 
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateSexDTO, Sex>();
         }
 
-        public Sex MapToSex(IMapper mapper)
+        public Sex MapToEntity(IMapper mapper)
         {
             return mapper.Map<Sex>(this);
         }

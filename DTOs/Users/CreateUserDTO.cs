@@ -7,7 +7,7 @@ using System;
 
 namespace Blog.DTOs.Users
 {
-    public class CreateUserDTO : IMapTo<User>
+    public class CreateUserDTO : IMapTo<User>, IMapToEntity<User>
     {
         public string FirstName { get; set; }
 
@@ -30,7 +30,7 @@ namespace Blog.DTOs.Users
                 .ForMember(dest => dest.Sex, opt => opt.MapFrom<GenderResolver>());
         }
 
-        public User MapToUser(IMapper mapper)
+        public User MapToEntity(IMapper mapper)
         {
             return mapper.Map<User>(this);
         }
