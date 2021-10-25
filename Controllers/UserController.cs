@@ -20,7 +20,7 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<ActionResult<PaginatedServiceResult<GetUserDTO>>> GetAllUsers()
         {
-            return Ok(await _userService.GetPaginatedUsersAsync());
+            return await _userService.GetPaginatedUsersAsync();
         }
 
         [HttpPost]
@@ -33,7 +33,7 @@ namespace Blog.Controllers
         [Route("{id}")]
         public async Task<ActionResult<ServiceResult<GetUserDTO>>> GetUser(Guid id)
         {
-            return Ok(await _userService.GetUserByIDAsync(id));
+            return await _userService.GetUserByIDAsync(id);
         }
     }
 }

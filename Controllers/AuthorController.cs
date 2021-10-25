@@ -24,7 +24,7 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<ActionResult<PaginatedServiceResult<GetAuthorDTO>>> GetPaginatedAuthors()
         {
-            return Ok(await _authorService.GetPaginatedAuthorsAsync());
+            return await _authorService.GetPaginatedAuthorsAsync();
         }
     }
 }

@@ -19,14 +19,14 @@ namespace Blog.Controllers
         [HttpGet]
         public async Task<ActionResult<PaginatedServiceResult<GetBlogPostDTO>>> GetPaginatedBlogs()
         {
-            return Ok(await _blogPostService.GetPaginatedBlogsAsync());
+            return await _blogPostService.GetPaginatedBlogsAsync();
         }
 
         [HttpGet]
         [Route("author/{authorID:guid}")]
         public async Task<ActionResult<PaginatedServiceResult<GetBlogPostDTO>>> GetPaginatedAuthorBlogs([FromRoute] Guid authorID)
         {
-            return Ok(await _blogPostService.GetPaginatedAuthorsBlogAsync(authorID));
+            return await _blogPostService.GetPaginatedAuthorsBlogAsync(authorID);
         }
 
         [HttpPost]
