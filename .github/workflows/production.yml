@@ -15,5 +15,6 @@ jobs:
         with:
           image: isnakolah/blog-app-api-server
           registry: docker.io
+          dockerfile: ./Dockerfile
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
