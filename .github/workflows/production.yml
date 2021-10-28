@@ -16,4 +16,6 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        run: docker build . --file Dockerfile --tag blog-app-backend:$(date +%s)
+      - name: Push Docker image to hub
+        run: docker push isnakolah/blog-app-api-server:blog-app-backend:$(date +%s)
