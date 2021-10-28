@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and Push Docker Image to hub
 
 on:
   push:
@@ -10,12 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: docker login
-        uses: actions/checkout@v2
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag blog-app-backend:one
-      - name: Push Docker image to hub
-        run: docker push isnakolah/blog-app-api-server:blog-app-backend:one
+      - name: Build and Push Docker Image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: isnakolah/blog-app-api-server
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
