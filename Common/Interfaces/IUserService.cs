@@ -1,6 +1,6 @@
 ﻿using Blog.Common.Models.ServiceResult;
-using Blog.DTOs.Users;
-using Blog.Users.DTOs;
+using Blog.DTOs.Persons;
+
 using System;
 using System.Threading.Tasks;
 
@@ -8,10 +8,10 @@ namespace Blog.Common.Interfaces
 {
     public interface IUserService
     {
-        Task<ServiceResult> CreateUserAsync(CreateUserDTO userDTO);
+        Task<ServiceResult> CreateUserAsync(CreatePersonDTO userDTO);
 
-        Task<ServiceResult<GetUserDTO>> GetUserByIDAsync(Guid id);
+        Task<ServiceResult<GetPersonDTO>> GetUserByIDAsync(Guid id);
 
-        Task<PaginatedServiceResult<GetUserDTO>> GetPaginatedUsersAsync();
+        Task<PaginatedServiceResult<GetPersonDTO>> GetPaginatedUsersAsync();
     }
 }

@@ -1,13 +1,10 @@
-﻿using System;
+﻿namespace Blog.Models.Entities;
 
-namespace Blog.Models.Entities
+public class Like
 {
-    public class Like
-    {
-        public Guid ID { get; set; }
+    public Guid ID { get; set; }
 
-        public Comment Comment { get; set; }
+    public Comment Comment { get; set; }
 
-        public User User { get; set; }
-    }
+    public Person User { get; set; }
 }

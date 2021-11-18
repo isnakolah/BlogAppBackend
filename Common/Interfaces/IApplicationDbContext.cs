@@ -7,7 +7,7 @@ namespace Blog.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-        DbSet<User> Users { get; set; }
+        DbSet<Person> Users { get; set; }
 
         DbSet<Author> Authors { get; set; }
 
