@@ -15,8 +15,7 @@ namespace Blog.DTOs.Authors
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateAuthorDTO, Author>()
-                .ForMember(dest => dest.User,
-                    opt => opt.MapFrom<UserResolver>());
+                .ForMember(dest => dest.User, opt => opt.MapFrom<UserResolver>());
         }
 
         public Author MapToEntity(IMapper mapper)
